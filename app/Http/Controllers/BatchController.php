@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Batch;
 use App\Models\Course;
+
 use Illuminate\Http\Request;
 
 class BatchController extends Controller
@@ -53,7 +54,8 @@ class BatchController extends Controller
     public function edit(string $id): View
     {
         $batches = Batch::find($id);
-        return view('batches.edit')->with('batches', $batches);
+        $courses = Course::pluck('name', 'id');
+        return view('batches.edit', compact('courses'))->with('batches', $batches);
     }
 
     /**
