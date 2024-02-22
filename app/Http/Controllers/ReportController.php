@@ -13,7 +13,6 @@ class ReportController extends Controller
     public function report($id)
     {
         $payment = Payment::find($id);
-
         if (!$payment) {
             abort(404, "Payment not found.");
         }
