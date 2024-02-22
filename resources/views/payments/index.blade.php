@@ -74,6 +74,7 @@
                                     Delete
                                 </button>
                             </form>
+                            <a href="{{url('/report/report1/' .$item->id )}}" title="Edit Payment"><button class="btn btn-success"><i class="fa fa-print" aria-hidden="true">Print</i></button> </a>
                         </td>
                     </tr>
                     @endforeach
